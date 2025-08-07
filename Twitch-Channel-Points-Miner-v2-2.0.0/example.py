@@ -17,7 +17,7 @@ from TwitchChannelPointsMiner.classes.entities.Streamer import Streamer, Streame
 
 twitch_miner = TwitchChannelPointsMiner(
     username="x1ikka",
-    password="vfyuecn2016",           # If no password will be provided, the script will ask interactively
+    password="vfyuecn2016",         # If no password will be provided, the script will ask interactively
     claim_drops_startup=False,                  # If you want to auto claim all drops from Twitch inventory on the startup
     priority=[                                  # Custom priority in this case for example:
         Priority.STREAK,                        # - We want first of all to catch all watch streak from all streamers
@@ -82,7 +82,7 @@ twitch_miner = TwitchChannelPointsMiner(
         )
     ),
     streamer_settings=StreamerSettings(
-        make_predictions=False,                  # If you want to Bet / Make prediction
+        make_predictions=True,                  # If you want to Bet / Make prediction
         follow_raid=True,                       # Follow raid to obtain more points
         claim_drops=True,                       # We can't filter rewards base on stream. Set to False for skip viewing counter increase and you will never obtain a drop reward from this script. Issue #21
         claim_moments=True,                     # If set to True, https://help.twitch.tv/s/article/moments will be claimed when available
@@ -131,6 +131,6 @@ twitch_miner.mine(
         "streamer-username10",
         "streamer-username11"
     ],                                  # Array of streamers (order = priority)
-    followers=True,                    # Automatic download the list of your followers
+    followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
 )
